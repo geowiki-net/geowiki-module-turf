@@ -1,0 +1,21 @@
+{
+  "name": "geowiki-module-turf",
+  "version": "0.0.0",
+  "description": "Expose geometry functions from Turf library",
+  "main": "src/turf.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geowiki-net/geowiki-module-turf.git"
+  },
+  "author": "Stephan Bösch-Plepelits <skunk@xover.mud.at>",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/geowiki-net/geowiki-module-turf/issues"
+  },
+  "homepage": "https://github.com/geowiki-net/geowiki-module-turf#readme",
+  "dependencies": {
+    "@turf/turf": "^7.2.0",
+    "twig": "^1.17.1"
+  }
+}
