@@ -8,6 +8,34 @@ const filters = {
   geomConcave: {
     func: turf.concave,
     prepare: 'convertToFeatureCollection'
+  },
+  geomPointsToLineString: {
+    func: (value) => {
+      if (value.type === 'GeometryCollection') {
+        return {
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: value.geometries
+              .map(geom => {
+                if (geom.type === 'Point') {
+                  return geom.coordinates
+                }
+              })
+              .filter(coordinate => coordinate)
+          }
+        }
+      }
+      else if (value.type === 'MultiPoint') {
+        return {
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: value.coordinates
+          }
+        }
+      }
+    }
   }
 }
 
