@@ -9,6 +9,9 @@ const filters = {
     func: turf.concave,
     prepare: 'convertToFeatureCollection'
   },
+  geomLineString: {
+    func: turf.lineString
+  },
   geomPointsToLineString: {
     func: (value) => {
       if (value.type === 'GeometryCollection') {
