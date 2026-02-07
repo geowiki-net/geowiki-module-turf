@@ -5,6 +5,9 @@ const filters = {
   geomBuffer: {
     func: turf.buffer
   },
+  geomCenter: {
+    func: turf.center
+  },
   geomConcave: {
     func: turf.concave,
     prepare: 'convertToFeatureCollection'
